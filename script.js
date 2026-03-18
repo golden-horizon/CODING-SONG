@@ -1,13 +1,13 @@
-// 🎧 Our DJ (audio engine)
+//  Our DJ (audio engine)
 const audio = new Audio();
 
-// 🎛️ Buttons
+//  Buttons
 const playButton = document.getElementById("play");
 const pauseButton = document.getElementById("pause");
 const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 
-// 🎵 Display
+//  Display
 const playingSong = document.getElementById("player-song-title");
 const songArtist = document.getElementById("player-song-artist");
 
@@ -19,14 +19,14 @@ const allSongs = [
   { id: 3, title: "Hotel California", artist: "Eagles", src: "" }
 ];
 
-// 🧠 App memory
+//  App memory
 const userData = {
   songs: allSongs,
   currentSong: null,
   songCurrentTime: 0
 };
 
-// ▶️ Play song
+//  Play song
 const playSong = (id) => {
   const song = userData.songs.find(s => s.id === id);
 
@@ -42,18 +42,18 @@ const playSong = (id) => {
 
   playButton.classList.add("playing");
 
-  // 🎶 let's gooo
+  //  let's gooo
   audio.play();
 };
 
-// ⏸️ Pause
+//  Pause
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
   playButton.classList.remove("playing");
   audio.pause();
 };
 
-// ⏭️ Next
+//  Next
 const playNextSong = () => {
   if (!userData.currentSong) return playSong(0);
 
@@ -63,7 +63,7 @@ const playNextSong = () => {
   if (next) playSong(next.id);
 };
 
-// ⏮️ Previous
+//  Previous
 const playPreviousSong = () => {
   if (!userData.currentSong) return;
 
@@ -73,16 +73,16 @@ const playPreviousSong = () => {
   if (prev) playSong(prev.id);
 };
 
-// 🖱️ Play button
+//  Play button
 playButton.addEventListener("click", () => {
   if (!userData.currentSong) playSong(0);
   else playSong(userData.currentSong.id);
 });
 
-// ⏸️ Pause button
+//  Pause button
 pauseButton.addEventListener("click", pauseSong);
 
-// ⏭️ ⏮️
+// 
 nextButton.addEventListener("click", playNextSong);
 previousButton.addEventListener("click", playPreviousSong);
 
@@ -95,5 +95,5 @@ document.querySelectorAll(".playlist-song").forEach(song => {
   });
 });
 
-// 🔥 Auto next when song ends
+//  Auto next when song ends
 audio.addEventListener("ended", playNextSong);
