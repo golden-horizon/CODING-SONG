@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>CODING SONG 🎧</title>
+</head>
+
+<body>
+
+  <!-- 🔗 Simple navigation -->
+  <nav style="text-align:center; margin:10px;">
+    <a href="coding.html">💻 Coding Vibes Page</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="player">
+      <div class="player-bar">
+        <h1 class="fcc-title">CODING SONG 🎧</h1>
+      </div>
+
+      <div class="player-content">
+        <div id="player-album-art">
+          <img src="https://cdn.freecodecamp.org/curriculum/js-music-player/digital-drift.jpg"/>
+        </div>
+
+        <div class="player-display">
+          <div>
+            <p id="player-song-title"></p>
+            <p id="player-song-artist"></p>
+          </div>
+
+          <div class="player-buttons">
+            <button id="previous">⏮️</button>
+            <button id="play">▶️</button>
+            <button id="pause">⏸️</button>
+            <button id="next">⏭️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎵 Playlist -->
+    <div class="playlist">
+      <h2>Coding Playlist 💻</h2>
+
+      <ul id="playlist-songs">
+        <li id="song-0" class="playlist-song"><button>Spring Waltz - Chopin</button></li>
+        <li id="song-1" class="playlist-song"><button>Lo-fi Coding Beat</button></li>
+        <li id="song-2" class="playlist-song"><button>Deep Focus</button></li>
+        <li id="song-3" class="playlist-song"><button>Hotel California - Eagles</button></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
