@@ -13,10 +13,7 @@ const songArtist = document.getElementById("player-song-artist");
 
 // 🎶 Playlist (IMPORTANT: replace src with real mp3 links)
 const allSongs = [
-  { id: 0, title: "Spring Waltz", artist: "Chopin", src: "" },
-  { id: 1, title: "Lo-fi Coding Beat", artist: "Dev Beats", src: "" },
-  { id: 2, title: "Deep Focus", artist: "Ambient Dev", src: "" },
-  { id: 3, title: "Hotel California", artist: "Eagles", src: "" }
+  { id: 0, title: " Waltz", artist: "Chopin", src: "./Chopin-waltz-in-a-minor.mp3" },
 ];
 
 //  App memory
