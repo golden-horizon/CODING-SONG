@@ -1,36 +1,108 @@
+/* 🌙 Page background */
 body {
   background: #1b1b32;
   color: white;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
+  margin: 0;
 }
 
+/* Main layout */
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
-.player, .playlist {
+/* Player + Playlist boxes */
+.player,
+.playlist {
   background: #2c2c3e;
-  padding: 15px;
+  padding: 20px;
   margin: 10px auto;
-  width: 350px;
+  width: 420px; /* same width for everything */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Player title bar */
+.player-bar {
+  margin-bottom: 10px;
+}
+
+.fcc-title {
+  margin: 0;
+}
+
+/* Player content layout */
+.player-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Album image */
+#player-album-art img {
+  width: 100%;
   border-radius: 10px;
 }
 
-button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
+/* Song info */
+.player-display {
+  width: 100%;
+  margin-top: 10px;
 }
 
+/* Song title */
+#player-song-title {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Artist */
+#player-song-artist {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Player buttons container */
+.player-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #444;
+  color: white;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #666;
+}
+
+/* Highlight when playing */
 .playing {
   color: yellow;
 }
 
+/* Playlist items */
 .playlist-song {
+  list-style: none;
   margin: 5px 0;
 }
 
+/* Playlist buttons */
 .playlist-song button {
   width: 100%;
+  text-align: left;
 }
