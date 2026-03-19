@@ -43,12 +43,18 @@ body {
 }
 
 /* Album image */
+#player-album-art {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔥 FORCE correct size */
 #player-album-art img {
- height: 33vh;        /* 1/3 of screen height */
-  width: auto;         /* keep aspect ratio */
-  max-width: 100%;     /* prevent overflow */
-  object-fit: cover;   /* keeps it looking nice */
-  border-radius: 10px; 
+  height: 33vh !important;   /* force 1/3 screen height */
+  width: 33vh !important;    /* make it square */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* Song info */
