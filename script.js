@@ -1,92 +1,140 @@
-//  Our DJ (audio engine)
+// 🎧 CODING SONG PLAYER
+// Your coding companion — because bugs hit different with music 😎
+
+// 🎵 Audio engine (our invisible DJ)
 const audio = new Audio();
 
-//  Buttons
+// 🎮 Controls
 const playButton = document.getElementById("play");
 const pauseButton = document.getElementById("pause");
 const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 
-//  Display
+// 📺 Display
 const playingSong = document.getElementById("player-song-title");
 const songArtist = document.getElementById("player-song-artist");
 
-// 🎶 Playlist (IMPORTANT: replace src with real mp3 links)
+// 🎶 Playlist (IMPORTANT: make sure files exist in your repo)
 const allSongs = [
-  { id: 0, title: "Spring Waltz", artist: "Chopin", src: "./Chopin-waltz-in-a-minor.mp3" },
-  { id: 1, title: "Lo-fi Coding Beat", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/in-the-zone.mp3" },
-  { id: 2, title: "Deep Focus", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/camper-cat.mp3" },
-  { id: 3, title: "Chill Track", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/electronic.mp3" }
+  {
+    id: 0,
+    title: "Spring Waltz",
+    artist: "Chopin",
+    src: "./Chopin-waltz-in-a-minor.mp3"
+  },
+  {
+    id: 1,
+    title: "Lo-fi Coding Beat",
+    artist: "Coding Vibes",
+    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/in-the-zone.mp3"
+  },
+  {
+    id: 2,
+    title: "Deep Focus",
+    artist: "Focus Mode",
+    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/electronic.mp3"
+  },
+  {
+    id: 3,
+    title: "Hotel California",
+    artist: "Eagles",
+    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3"
+  }
 ];
 
-//  App memory
+// 🧠 App memory (state)
 const userData = {
   songs: allSongs,
   currentSong: null,
   songCurrentTime: 0
 };
 
-//  Play song
+// ▶️ Play a song
 const playSong = (id) => {
   const song = userData.songs.find(s => s.id === id);
 
-  // load music
+  if (!song) {
+    console.error("❌ Song not found!");
+    return;
+  }
+
+  // 🎧 Load song
   audio.src = song.src;
 
-  // update memory
+  // 🔄 Reset or resume
+  if (!userData.currentSong) {
+    audio.currentTime = 0;
+  } else {
+    audio.currentTime = userData.songCurrentTime;
+  }
+
+  // 🧠 Save state
   userData.currentSong = song;
 
-  // UI update
+  // 🎨 Update UI
   playingSong.textContent = song.title;
   songArtist.textContent = song.artist;
-
   playButton.classList.add("playing");
 
-  //  let's gooo
+  // 🚀 Play!
   audio.play();
 };
 
-//  Pause
+// ⏸️ Pause
 const pauseSong = () => {
   userData.songCurrentTime = audio.currentTime;
   playButton.classList.remove("playing");
   audio.pause();
 };
 
-//  Next
+// ⏭️ Next song
 const playNextSong = () => {
-  if (!userData.currentSong) return playSong(0);
+  if (!userData.currentSong) {
+    return playSong(0);
+  }
 
   const index = userData.songs.indexOf(userData.currentSong);
   const next = userData.songs[index + 1];
 
-  if (next) playSong(next.id);
+  if (next) {
+    playSong(next.id);
+  } else {
+    // 🎬 End of playlist
+    console.log("🎵 End of playlist");
+    userData.currentSong = null;
+    audio.pause();
+  }
 };
 
-//  Previous
+// ⏮️ Previous song
 const playPreviousSong = () => {
   if (!userData.currentSong) return;
 
   const index = userData.songs.indexOf(userData.currentSong);
   const prev = userData.songs[index - 1];
 
-  if (prev) playSong(prev.id);
+  if (prev) {
+    playSong(prev.id);
+  }
 };
 
-//  Play button
+// ▶️ Play button
 playButton.addEventListener("click", () => {
-  if (!userData.currentSong) playSong(0);
-  else playSong(userData.currentSong.id);
+  if (!userData.currentSong) {
+    playSong(0);
+  } else {
+    playSong(userData.currentSong.id);
+  }
 });
 
-//  Pause button
+// ⏸️ Pause button
 pauseButton.addEventListener("click", pauseSong);
 
-// 
+// ⏭️ ⏮️ Navigation
 nextButton.addEventListener("click", playNextSong);
 previousButton.addEventListener("click", playPreviousSong);
 
-// 🎵 Click playlist songs
+// 🎵 Playlist click
 document.querySelectorAll(".playlist-song").forEach(song => {
   const id = Number(song.id.split("-")[1]);
 
@@ -95,5 +143,5 @@ document.querySelectorAll(".playlist-song").forEach(song => {
   });
 });
 
-//  Auto next when song ends
+// 🔁 Auto play next when song ends
 audio.addEventListener("ended", playNextSong);
