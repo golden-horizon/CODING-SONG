@@ -13,7 +13,10 @@ const songArtist = document.getElementById("player-song-artist");
 
 // 🎶 Playlist (IMPORTANT: replace src with real mp3 links)
 const allSongs = [
-  { id: 0, title: " Waltz", artist: "Chopin", src: "./Chopin-waltz-in-a-minor.mp3" },
+  { id: 0, title: "Spring Waltz", artist: "Chopin", src: "./Chopin-waltz-in-a-minor.mp3" },
+  { id: 1, title: "Lo-fi Coding Beat", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/in-the-zone.mp3" },
+  { id: 2, title: "Deep Focus", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/camper-cat.mp3" },
+  { id: 3, title: "Chill Track", artist: "Unknown", src: "https://cdn.freecodecamp.org/curriculum/js-music-player/electronic.mp3" }
 ];
 
 //  App memory
