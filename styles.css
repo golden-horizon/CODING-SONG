@@ -52,7 +52,7 @@ body {
 /* 🔥 FORCE correct size */
 #player-album-art img {
   height: 33vh !important;   /* force 1/3 screen height */
-  width: 33vh !important;    /* make it square */
+  width: 70vh !important;    
   object-fit: cover;
   border-radius: 10px;
 }
