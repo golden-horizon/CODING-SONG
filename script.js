@@ -30,15 +30,15 @@ const allSongs = [
   },
   {
     id: 2,
-    title: "Deep Focus",
-    artist: "Focus Mode",
-    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/electronic.mp3"
+    title: "chopin 9",
+    artist: "Chopin",
+    src: "./clavier-music-chopin-nocturne-op-9-no-2-classical-piano-321995.mp3"
   },
   {
     id: 3,
-    title: "Hotel California",
-    artist: "Eagles",
-    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3"
+    title: "Chopin",
+    artist: "Chopin",
+    src: "./pexels-jonathanschmer-6196828.jpg"
   }
 ];
 
