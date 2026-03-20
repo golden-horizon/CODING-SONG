@@ -24,9 +24,9 @@ const allSongs = [
   },
   {
     id: 1,
-    title: "Lo-fi Coding Beat",
+    title: "StockTune-Casual Vibes Office Streams",
     artist: "Coding Vibes",
-    src: "https://cdn.freecodecamp.org/curriculum/js-music-player/in-the-zone.mp3"
+    src: "./StockTune-Casual Vibes Office Streams_1773967463.mp3"
   },
   {
     id: 2,
