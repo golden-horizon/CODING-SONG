@@ -55,10 +55,21 @@ You can:
 
 ##  How to Contribute
 
-1. Fork this repository  
-2. Add your song in `script.js`  
+1. Fork this repository
+2. 2.Add song title to HTML file
+   Example:
+<h2> Playlist </h2>
 
-Example:
+      <ul id="playlist-songs">
+        <li id="song-0" class="playlist-song"><button>Spring Waltz - Chopin</button></li>
+        <li id="song-1" class="playlist-song"><button>StockTune-Casual Vibes Office Streams</button></li>
+        <li id="song-2" class="playlist-song"><button>Deep Focus</button></li>
+        <li id="song-3" class="playlist-song"><button>Hotel California - Eagles</button></li>
+      </ul>
+     
+3. Add your song in `script.js`  
+
+
 
 ```js
 {
